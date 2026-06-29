@@ -1,3 +1,4 @@
+import React from 'react'; // 1. Добавляем импорт React
 import './PostList.scss';
 import { PostInfo } from '../PostInfo';
 
@@ -11,12 +12,9 @@ export const PostList = ({ posts, users, comments }) => {
         );
 
         return (
-          <PostInfo
-            key={post.id}
-            post={post}
-            user={postUser}
-            comments={postComments}
-          />
+          <React.Fragment key={post.id}>
+            <PostInfo post={post} user={postUser} comments={postComments} />
+          </React.Fragment>
         );
       })}
     </div>
